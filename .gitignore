@@ -1,0 +1,13 @@
+# Angular
+/dist
+/node_modules
+/.angular/cache
+/.angular/config.json
+
+# NestJS
+/nano-store/node_modules
+/nano-store/dist
+
+# General
+.env
+.DS_Store
