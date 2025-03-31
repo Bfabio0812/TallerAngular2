@@ -1,0 +1,67 @@
+<div class="card flex justify-center">
+  <p-button (click)="showDialog()" label="Show" />
+  <p-dialog header="carrito de compras" [(visible)]="visible" [style]="{ width: '25rem' }">
+  <span class="p-text-secondary block mb-8">Lista.</span>
+  <ul>
+    @for(producto of cart(); track producto){
+      <li>
+        {{producto.title}} -- {{producto.price}}
+
+        <p-button
+                label="Remove"
+                 (click)="removeFromCart(producto)"
+                 severity="danger"
+                 [outlined]="true"
+              />
+      </li>
+    }
+  </ul>
+  <div class="flex justify-end gap-2">
+  <p-button label="Cancel" severity="secondary" (click)="visible = false" />
+  <p-button label="Save" (click)="visible = false" />
+  </div>
+  </p-dialog>
+</div>
+
+<div class="mb-4 p-8 flex items-center justify-center">
+
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+
+
+
+      <ng-template #title> Ejemplo 8 de senales </ng-template>
+
+      <ng-template #subtitle> Carrito de compras </ng-template>
+
+      <h2>Total del Carrito: <b>{{totalPrice()}}</b></h2>
+
+      <ul>
+        @for(producto of productos(); track producto){
+          <li>
+            {{producto.title}} -- {{producto.price}}
+            @if(selectedPrductsIds().includes(producto.id)){
+              <p-button
+                label="Remove"
+                 (click)="removeFromCart(producto)"
+                 severity="danger"
+                 [outlined]="true"
+              />
+            } @else {
+              <p-button
+                label="Agregar al carrito"
+                (click)="addToCart(producto)"
+                severity="success"
+                [outlined]="true"
+              />
+            }
+          </li>
+
+        }
+      </ul>
+
+
+  </p-card>
+
+</div>
+
+

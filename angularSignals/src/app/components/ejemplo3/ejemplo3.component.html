@@ -1,0 +1,24 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+
+
+
+      <ng-template #title> Ejemplo 3 de senales </ng-template>
+
+      <ng-template #subtitle> Senales conectadas a un Input</ng-template>
+
+      <p>
+            <p-floatlabel variant="in">
+              <input pInputText id="in_label" autocomplete="off" #esteInput (input)="updateCampo(esteInput.value)" />
+              <label for="in_label">Ingrese un texto</label>
+            </p-floatlabel>
+      </p>
+      <P>
+        Datos del campo: {{campoHtml()}}
+      </P>
+
+
+  </p-card>
+
+</div>

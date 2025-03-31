@@ -1,0 +1,37 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+
+
+
+      <ng-template #title> Ejemplo 6 de senales </ng-template>
+
+      <ng-template #subtitle> Uso del Effect </ng-template>
+
+      <p>
+
+         contador 1: --> {{contador()}}
+
+      </p>
+
+      <p>
+        Contador 2: --> {{contador2()}}
+      </p>
+
+
+      <ng-template #footer>
+
+          <div class="flex gap-4 mt-1">
+
+              <p-button label="Incrementar" (click)="updateContador()"   severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+              <p-button label="Incrementar contador 2" (click)="updateContador2()"   severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+
+
+          </div>
+
+      </ng-template>
+
+  </p-card>
+
+</div>
+
